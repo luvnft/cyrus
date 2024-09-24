@@ -1,0 +1,78 @@
+---
+import ContentSection from "~/components/content-section.astro";
+const { site } = Astro;
+---
+
+<ContentSection title="Contact" id="contacto">
+  <Fragment slot="lead">
+    <span>
+      Onboard your dealership to the <span class="text-primary"></span>@CAR4SAL3</span> TikTok showroom today.
+    </span>
+  </Fragment>
+  <section>
+    <div class="mx-auto px-4 py-8 mobile:min-w-96 md:min-w-176 lg:py-6">
+      <form
+        class="space-y-8"
+        accept-charset="utf-8"
+        name="form-contacto"
+        action="https://formsubmit.co/info@arvrtise.com"
+        method="post"
+      >
+        <div class="flex-row lg:flex lg:gap-x-4">
+          <div class="lg:mb-6 w-full lg:mb-0">
+            <label for="nombre" class="mb-2 block font-medium text-sm"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="block w-full rounded-lg border border-input bg-contactInput p-2.5 text-default placeholder-default shadow-sm text-sm"
+              placeholder="Philly Ferrari Dealership"
+              required
+            />
+          </div>
+          <div class="lg:mb-6 w-full lg:mb-0">
+            <label for="email" class="mb-2 block font-medium text-sm"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="block w-full rounded-lg border border-input bg-contactInput p-2.5 text-default placeholder-default shadow-sm text-sm"
+              placeholder="info@arvrtise.com"
+              required
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="mensaje" class="mb-2 block font-medium text-sm"
+            >Your message</label
+          >
+          <textarea
+            id="mensaje"
+            rows="6"
+            minlength="10"
+            name="mensaje"
+            class="block max-h-60 min-h-24 w-full rounded-lg border border-input bg-contactInput p-2.5 text-default placeholder-default shadow-sm text-sm"
+            placeholder="I want to Arvrtise my..."
+            required></textarea>
+        </div>
+        <button
+          type="submit"
+          class="min-w-72 rounded-lg bg-gradient-to-br from-yellow-500 to-yellow-600 px-5 py-3 text-center font-medium text-white duration-300 text-sm hover:scale-105 focus:outline-none focus:ring-4 mobile:min-w-96 md:min-w-176"
+          >Send message</button
+        >
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value={`${site}`} />
+        <input type="hidden" name="_template" value="box" />
+        <input
+          type="hidden"
+          name="_cc"
+          value="info@arvrtise.com"
+        />
+      </form>
+    </div>
+  </section>
+</ContentSection>

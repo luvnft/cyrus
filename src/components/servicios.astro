@@ -1,0 +1,145 @@
+---
+import ContentSection from "~/components/content-section.astro";
+// import LottieAnimation from "astro-integration-lottie/Lottie.astro"; // Removed
+import type { ServiceItem } from "~/types";
+import FeaturesList from "~/components/features-list.astro";
+
+const services: Array<ServiceItem> = [
+  {
+    title: "SELL FASTER",
+    subtitle: "Sell Today",
+    description: "TikTok surpased Google years ago as a #1 search engine. Increase your Gen-Z car sales with no upfront fees, pay a flat rate of $100 per lead (dealerships only).",
+    img: "emoji-Hahz",
+    list1: "Strategic management of communication across relevant social media platforms.",
+    list2: "Amplification of your brand in digital landscapes.",
+    list3: "Enhancement of your tokenized digital properties",
+    list4: "Continuous optimization of your digital presence.",
+  },
+  {
+    title: "CAR LINKTREE",
+    subtitle: "COMING SOON",
+    description: "Arvrtise Car link is the Linktree for parterning dealerships that allows subscribers to find dealers and car sale locations. ",
+    img: "emoji-Tree",
+    list1: "Crafting 1 of 1 Bitcoin CRE",
+    list2: "Thorough review of corporate image, colors, and identity.",
+    list3: "Transformation of ideas into a visually impactful identity.",
+    list4: "Standing out in the marketplace with a cohesive and compelling visual communication.",
+  },
+  {
+    title: "TIKTOK TV",
+    subtitle: "1B Active Users",
+    description: "71.2% of TikTok users report making purchases after encountering a product in their feed, highlighting the platform's potential for impulse buys. 55% of TikTok users have made an impulse purchase.​​",
+    img: "emoji-TV",
+    list1: "Create affordable CRE rentals.",
+    list2: "Development of effective strategies through testing and data analysis.",
+    list3: "Continuous improvement to reach new levels of success.",
+    list4: "Focus on optimization and long-term success.",
+  },
+  {
+    title: "@CAR4SAL3 ADS",
+    subtitle: "60 Secs",
+    description: "Less is more in this day in age with the average person having a 3 sec attention span, we make your Car 4 Sal3 stand out from the rest on TikTok.",
+    img: "emoji-PPV",
+    list1: "Design and execution of high-impact social media campaigns.",
+    list2: "Focus on key objectives such as online sales, lead generation, and branding.",
+    list3: "Tangible results in the short term to drive the success of your business.",
+    list4: "Campaigns focused on increasing foot traffic and calls.",
+  },
+  {
+    title: "REELVIEW",
+    subtitle: "Video Reviews",
+    description: "Create a branded dealership TikTok ReelView mic that allows your customers to leave a video review your brand you can use for content.",
+    img: "emoji-Love",
+    list1: "Custom websites that reflect the unique essence of your brand.",
+    list2: "Responsive across all devices.",
+    list3: "Engaging design that captivates your audience.",
+    list4: "Implementation of the latest technologies for an optimal online presence.",
+  },
+  {
+    title: "TIKTOK ADS",
+    subtitle: "PPC",
+    description: "Arvrtise your car 4 sale with a Telegram PPC (Pay Per Click) ad campaign that cost less than Google, FB or IG.",
+    img: "emoji-Ads",
+    list1: "Captivating videos that amplify your message in a unique way.",
+    list2: "Expert editing that sets you apart and positions you for organic growth.",
+    list3: "Especially effective on platforms like TikTok and Instagram.",
+    list4: "Maximize the impact of your video content.",
+  },
+  {
+    title: "HASHTAG",
+    subtitle: "#CAR4SAL3",
+    description: "Use our #CAR4SAL3 hashtag to find any car in the world mapped to a What3Words address near you.",
+    img: "emoji-Find",
+    list1: "Advanced strategies to boost your online presence.",
+    list2: "Organic search engine ranking optimization.",
+    list3: "Consistent increase in potential customers to your website.",
+    list4: "Fueling the growth of your business through effective strategies.",
+  },
+  {
+    title: "AUCTION",
+    subtitle: "Live",
+    description: "Schedule a live auction on our livestream platform with a chat for Q&A in real time. 🟠",
+    img: "emoji-Z",
+    list1: "High-impact advertising strategies across multiple platforms.",
+    list2: "Driving highly qualified traffic to your digital properties.",
+    list3: "Focus on generating sales, capturing leads, and more.",
+    list4: "Maximizing the return on your online presence.",
+  },
+];
+---
+
+<ContentSection title="How To Start" id="solutions">
+  <Fragment slot="lead">
+    Follow Arvrtise <a href="https://tiktok.com@car4sal3" target="_blank" rel="noopener noreferrer" class="text-primary">@CAR4SAL3</a>
+    DM us the car that you want to sell. We Arvrtise it, you only pay for leads.
+  </Fragment>
+
+  {
+    services.map((service, index) => (
+      <div class="max-w-6xl">
+        {index % 2 === 0 ? (
+          <div class="md:flex md:flex-row lg:max-h-[27rem] lg:min-h-[27rem] 2xl:max-h-[35rem]">
+            <div class="flex flex-col justify-center p-4 text-center md:w-1/2 md:items-end md:text-end">
+              <h3 class="mb-2 font-semibold text-gris text-lg md:text-base">
+                {service.subtitle}
+              </h3>
+              <h2 class="gradient-text mb-6 font-extrabold text-6xl md:mb-7 md:text-4xl">
+                {service.title}
+              </h2>
+              <p class="text-balance font-normal text-gris text-base">
+                {service.description}
+              </p>
+            </div>
+            <div class="my-6 justify-center md:my-12 md:w-1/2">
+              <div class="m-auto max-w-80 md:max-w-sm 2xl:max-w-lg">
+                <span class={`text-primary font-bold text-4xl ${service.img}`}></span>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div class="flex flex-col-reverse md:flex-row lg:max-h-[27rem] lg:min-h-[27rem] 2xl:max-h-[35rem]">
+            <div class="my-6 justify-center md:my-12 md:w-1/2">
+              <div class="m-auto max-w-80 md:max-w-sm 2xl:max-w-lg">
+                <span class={`text-primary font-bold text-4xl ${service.img}`}></span>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center p-4 text-center md:w-1/2 md:items-start md:text-start">
+              <h3 class="mb-2 font-semibold text-gris text-lg md:text-base">
+                {service.subtitle}
+              </h3>
+              <h2 class="gradient-text mb-6 font-extrabold text-6xl md:mb-7 md:text-4xl">
+                {service.title}
+              </h2>
+              <p class="font-normal text-gris text-base">
+                {service.description}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+    ))
+  }
+</ContentSection>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');

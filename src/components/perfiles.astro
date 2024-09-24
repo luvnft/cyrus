@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  class="flex max-w-7xl flex-col items-end justify-center gap-16 md:flex-row"
+>
+  <!-- {
+    nosotros.map(({ img, name, title, description, social }) => (
+      <article class=" flex flex-1 flex-col items-center justify-center gap-3 rounded-lg">
+        <Image class="mb-5 h-48 w-48 rounded-lg" src={img} alt={name} />
+        <p class="gradient-text text-center font-bold text-3xl md:text-2xl">
+          {name}
+        </p>
+        <p class="text-center text-lg">{title}</p>
+        <p class="text-pretty text-center font-normal text-gris text-sm md:px-4">
+          {description}
+        </p>
+        <div class="flex w-4/6 flex-row items-center justify-center gap-5 border-t-2 border-primary p-3">
+          <a href={social.linkedin} target="_blank" rel="noopener">
+            <Icon class="size-6" name={"fa-brands:linkedin"} />
+          </a>
+          <a href={social.instagram} target="_blank" rel="noopener">
+            <Icon class="size-6" name={"fa-brands:instagram"} />
+          </a>
+        </div>
+      </article>
+    ))
+  } -->
+</section>
