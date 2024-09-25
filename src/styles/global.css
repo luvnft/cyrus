@@ -136,7 +136,9 @@ a,
 .emoji-Find::before,
 .emoji-Star::before,
 .emoji-Z::before,
-.emoji-Live::before {
+.emoji-Live::before,
+.emoji-Camera::before,
+.emoji-Mic::before {  /* Added new emoji classes */
   font-family: "Noto Color Emoji", sans-serif;
   font-size: 333px; /* Set emoji size to 400px */
   display: flex;
@@ -195,4 +197,13 @@ a,
 
 .emoji-Live::before {
   content: "👁️";
+}
+
+/* New emoji definitions */
+.emoji-Camera::before {
+  content: "📷"; /* Camera emoji */
+}
+
+.emoji-Mic::before {
+  content: "🎙️"; /* Microphone emoji */
 }
