@@ -72,8 +72,8 @@ const services: Array<ServiceItem> = [
       <div class="max-w-6xl mx-auto" key={index}>
         <div class={`md:flex ${index % 2 === 0 ? 'md:flex-row' : 'flex-col-reverse md:flex-row'} lg:min-h-[27rem] 2xl:min-h-[35rem]`}>
           <div class="my-6 flex justify-center md:my-12 md:w-1/2">
-            <div class="m-auto">
-              <span class="text-[5rem] sm:text-[7rem] md:text-[12rem] 2xl:text-[16rem] leading-none font-bold text-primary block">
+            <div class="m-auto w-full max-w-[1024px]">
+              <span class="block text-[25vw] md:text-[20rem] leading-none font-bold text-primary text-center">
                 {service.emoji}
               </span>
             </div>
@@ -88,8 +88,8 @@ const services: Array<ServiceItem> = [
             <p class="text-base font-normal text-gray-500 text-balance">
               {service.description}
             </p>
-            <a href={service.link} class="mt-4 inline-block px-8 py-4 text-2xl font-bold uppercase turnpike-button">
-              Learn More
+            <a href={service.link} class="exit-button mt-4 inline-block">
+              EXIT
             </a>
           </div>
         </div>
@@ -101,56 +101,37 @@ const services: Array<ServiceItem> = [
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Highway+Gothic&display=swap');
 
-  .turnpike-button {
+  .exit-button {
     font-family: 'Highway Gothic', Arial, sans-serif;
     background-color: #005f25;
     color: #ffd700;
-    border: 4px solid #ffd700;
-    border-radius: 0;
-    position: relative;
+    border: 3px solid #ffd700;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
     text-decoration: none;
+    border-radius: 0;
     transition: all 0.3s ease;
-    letter-spacing: 1.5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 1.5rem;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
 
-  .turnpike-button:hover {
+  .exit-button:hover {
     background-color: #004a1c;
     color: #ffea66;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
 
-  .turnpike-button::before {
-    content: "EXIT";
-    position: absolute;
-    top: -1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #005f25;
-    color: white;
-    padding: 0.25rem 1rem;
-    font-size: 1rem;
-    border: 3px solid #ffd700;
-    border-bottom: none;
-    border-radius: 6px 6px 0 0;
-    font-weight: bold;
-  }
-
-  body.dark-theme .turnpike-button {
+  body.dark-theme .exit-button {
     background-color: #004a1c;
     color: #ffdf33;
     border-color: #ffdf33;
   }
 
-  body.dark-theme .turnpike-button:hover {
+  body.dark-theme .exit-button:hover {
     background-color: #003814;
     color: #ffea66;
-  }
-
-  body.dark-theme .turnpike-button::before {
-    background-color: #004a1c;
-    border-color: #ffdf33;
   }
 </style>
