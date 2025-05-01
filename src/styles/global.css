@@ -140,7 +140,7 @@ a,
 .emoji-Camera::before,
 .emoji-Mic::before {  /* Added new emoji classes */
   font-family: "Noto Color Emoji", sans-serif;
-  font-size: 333px; /* Set emoji size to 400px */
+  font-size: 400px; /* Set emoji size to 400px */
   display: flex;
   justify-content: center;
   align-items: center;
