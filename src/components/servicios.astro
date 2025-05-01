@@ -1,3 +1,15 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import type { ServiceItem } from "~/types";
+
+// Define the emoji-to-Twemoji image converter
+function emojiToTwemojiURL(emoji: string): string {
+  const codePoints = Array.from(emoji)
+    .map((char) => char.codePointAt(0)!.toString(16))
+    .join("-");
+  return `https://twemoji.maxcdn.com/v/latest/72x72/${codePoints}.png`;
+}
+
 const services: Array<ServiceItem> = [
   {
     title: "MU$IK",
@@ -68,10 +80,12 @@ const services: Array<ServiceItem> = [
       <div class="max-w-6xl mx-auto" key={index}>
         <div class={`md:flex ${index % 2 === 0 ? 'md:flex-row' : 'flex-col-reverse md:flex-row'} lg:min-h-[27rem] 2xl:min-h-[35rem]`}>
           <div class="my-6 flex justify-center md:my-12 md:w-1/2">
-            <div class="m-auto w-full max-w-[1024px]">
-              <span class="block text-[25vw] md:text-[20rem] leading-none font-bold text-primary text-center">
-                {service.emoji}
-              </span>
+            <div class="m-auto">
+              <img
+                src={emojiToTwemojiURL(service.emoji)}
+                alt={service.emoji}
+                class="w-[180px] h-[180px] sm:w-[256px] sm:h-[256px] md:w-[384px] md:h-[384px] 2xl:w-[512px] 2xl:h-[512px] object-contain"
+              />
             </div>
           </div>
           <div class="flex flex-col justify-center p-4 text-center md:w-1/2 md:text-start md:items-start">
@@ -84,7 +98,7 @@ const services: Array<ServiceItem> = [
             <p class="text-base font-normal text-gray-500 text-balance">
               {service.description}
             </p>
-            <a href={service.link} class="exit-button mt-4 inline-block">
+            <a href={service.link} class="mt-4 inline-block px-4 py-2 text-base font-bold uppercase turnpike-button">
               EXIT
             </a>
           </div>
@@ -97,39 +111,33 @@ const services: Array<ServiceItem> = [
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Highway+Gothic&display=swap');
 
-  .exit-button {
+  .turnpike-button {
     font-family: 'Highway Gothic', Arial, sans-serif;
     background-color: #005f25;
     color: #ffd700;
     border: 3px solid #ffd700;
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    border-radius: 4px;
     text-decoration: none;
-    border-radius: 0;
     transition: all 0.3s ease;
     letter-spacing: 1px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   }
 
-  .exit-button:hover {
+  .turnpike-button:hover {
     background-color: #004a1c;
     color: #ffea66;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
-  body.dark-theme .exit-button {
+  body.dark-theme .turnpike-button {
     background-color: #004a1c;
     color: #ffdf33;
     border-color: #ffdf33;
   }
 
-  body.dark-theme .exit-button:hover {
+  body.dark-theme .turnpike-button:hover {
     background-color: #003814;
     color: #ffea66;
   }
 </style>
-
-
