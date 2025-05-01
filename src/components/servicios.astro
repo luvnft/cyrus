@@ -1,3 +1,4 @@
+---
 // page.astro or a component file
 import ContentSection from "~/components/content-section.astro";
 import type { ServiceItem } from "~/types";
@@ -73,9 +74,7 @@ const services: Array<ServiceItem> = [
         <div class={`md:flex ${index % 2 === 0 ? 'md:flex-row' : 'flex-col-reverse md:flex-row'} lg:min-h-[27rem] 2xl:min-h-[35rem]`}>
           <div class="my-6 flex justify-center md:my-12 md:w-1/2">
             <div class="m-auto">
-              <span class="twemoji text-[6rem] sm:text-[10rem] md:text-[16rem] 2xl:text-[20rem] block">
-                {service.emoji}
-              </span>
+              <span class={`emoji-${service.emoji} block`}></span>
             </div>
           </div>
           <div class="flex flex-col justify-center p-4 text-center md:w-1/2 md:text-start md:items-start">
@@ -110,7 +109,92 @@ const services: Array<ServiceItem> = [
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Highway+Gothic&display=swap');
+  /* Import Noto Color Emoji font */
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+
+  /* Emoji class definitions with centering and size */
+  .emoji-TV::before,
+  .emoji-Tree::before,
+  .emoji-Gem::before,
+  .emoji-Tip::before,
+  .emoji-Ads::before,
+  .emoji-Hahz::before,
+  .emoji-Love::before,
+  .emoji-PPV::before,
+  .emoji-Find::before,
+  .emoji-Star::before,
+  .emoji-Z::before,
+  .emoji-Live::before,
+  .emoji-Camera::before,
+  .emoji-Mic::before {
+    font-family: "Noto Color Emoji", sans-serif;
+    font-size: 400px; /* Set emoji size to 400px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Ensure the container takes full width */
+    height: 400px; /* Set height to match the emoji size */
+    line-height: 400px; /* Center the emoji vertically */
+  }
+
+  /* Individual emojis */
+  .emoji-TV::before {
+    content: "📺";
+  }
+
+  .emoji-Tree::before {
+    content: "🏝️";
+  }
+
+  .emoji-Gem::before {
+    content: "💎";
+  }
+
+  .emoji-Tip::before {
+    content: "💸";
+  }
+
+  .emoji-Ads::before {
+    content: "📣";
+  }
+
+  .emoji-Hahz::before {
+    content: "⚡";
+  }
+
+  .emoji-Love::before {
+    content: "🫶";
+  }
+
+  .emoji-PPV::before {
+    content: "🎥";
+  }
+
+  .emoji-Find::before {
+    content: "🔍";
+  }
+
+  .emoji-Star::before {
+    content: "⭐";
+  }
+
+  .emoji-Z::before {
+    content: "🟠";
+  }
+
+  .emoji-Live::before {
+    content: "👁️";
+  }
+
+  /* New emoji definitions */
+  .emoji-Camera::before {
+    content: "📷"; /* Camera emoji */
+  }
+
+  .emoji-Mic::before {
+    content: "🎙️"; /* Microphone emoji */
+  }
 
   .turnpike-button {
     font-family: 'Highway Gothic', Arial, sans-serif;
@@ -131,28 +215,19 @@ const services: Array<ServiceItem> = [
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
 
+  /* Force emoji size */
   .twemoji img {
     width: auto;
-    max-width: 100%;  /* Ensure it scales to image size */
     height: auto;
-    max-height: 400px; /* Limit max height */
-    object-fit: contain;
+    max-width: 100%;
+    max-height: 400px; /* Set max height to control scaling */
+    object-fit: contain; /* Ensures the emoji maintains aspect ratio */
   }
 
+  /* Make sure large emojis are visible and responsive */
   @media (max-width: 768px) {
     .twemoji img {
-      max-width: 160px;  /* Ensure it scales down for smaller devices */
+      max-width: 160px;
     }
-  }
-
-  body.dark-theme .turnpike-button {
-    background-color: #004a1c;
-    color: #ffdf33;
-    border-color: #ffdf33;
-  }
-
-  body.dark-theme .turnpike-button:hover {
-    background-color: #003814;
-    color: #ffea66;
   }
 </style>
