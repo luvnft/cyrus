@@ -1,4 +1,3 @@
----
 // page.astro or a component file
 import ContentSection from "~/components/content-section.astro";
 import type { ServiceItem } from "~/types";
@@ -133,14 +132,16 @@ const services: Array<ServiceItem> = [
   }
 
   .twemoji img {
-    width: 100%;
-    max-width: 256px;
+    width: auto;
+    max-width: 100%;  /* Ensure it scales to image size */
     height: auto;
+    max-height: 400px; /* Limit max height */
+    object-fit: contain;
   }
 
   @media (max-width: 768px) {
     .twemoji img {
-      max-width: 160px;
+      max-width: 160px;  /* Ensure it scales down for smaller devices */
     }
   }
 
