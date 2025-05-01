@@ -10,29 +10,30 @@ const links: Array<FooterLink> = [
     icon: "fa-brands:tiktok",
   },
 ];
-
 ---
 
 <footer class="relative flex h-64 items-center justify-center">
   <div class="absolute inset-0 overflow-hidden opacity-50">
     <HeroImage />
   </div>
-  <ul class="relative grid grid-cols-3 gap-4 sm:grid-cols-3">
-    {
-      links.map((link) => (
-        <li>
-          <a
-            class="flex size-16 items-center justify-center rounded-full border-2 border-current p-4"
-            href={link.url}
-            target="_blank"
-          >
-            <span class="sr-only">{link.description}</span>
-            <Icon class="size-full" name={link.icon} />
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="relative w-full">
+    <ul class="flex justify-center">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              class="flex size-16 items-center justify-center rounded-full border-2 border-current p-4"
+              href={link.url}
+              target="_blank"
+            >
+              <span class="sr-only">{link.description}</span>
+              <Icon class="size-full" name={link.icon} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
   <p class="absolute bottom-0 left-0 right-0 mb-6 text-center text-sm">
     &copy; {new Date().getFullYear()}
     <span class="font-bold text-primary contrast-125">JERSEY.FM</span>

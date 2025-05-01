@@ -39,18 +39,18 @@ const services: Array<ServiceItem> = [
     link: "/podcast"
   },
   {
-    title: "PUMP",
+    title: "JERSEY CLUB",
     subtitle: "Exit 6",
     description: "Pump your fav Jersey Club musik, chat and chill in the LUV NFT FUN club.",
     img: "emoji-Ads",
     link: "https://fun.luvnft.com/groups/jersey-club-fm/"
   },
   {
-    title: "SELL RECORDS",
+    title: "VINYL",
     subtitle: "Exit 7",
-    description: "Go see the Wizard of Hahz on Telegram to have your Jersey Club Record art created that can be sold for crypto with no middleman fees.",
+    description: "Connect your Spotify with our Vinyl Record Player.",
     img: "emoji-Camera",
-    link: "https://t.me/hahznft"
+    link: "https://vinyl.jersey.fm"
   },
   {
     title: "$JERSEY",
@@ -88,7 +88,7 @@ const services: Array<ServiceItem> = [
             </div>
             <div class="my-6 flex justify-center md:my-12 md:w-1/2">
               <div class="m-auto max-w-80 md:max-w-sm 2xl:max-w-lg">
-                <span class={`text-4xl font-bold text-primary ${service.img}`}></span>
+                <span class={`text-8xl md:text-4xl font-bold text-primary ${service.img}`}></span>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ const services: Array<ServiceItem> = [
           <div class="flex flex-col-reverse md:flex-row lg:min-h-[27rem] 2xl:min-h-[35rem]">
             <div class="my-6 flex justify-center md:my-12 md:w-1/2">
               <div class="m-auto max-w-80 md:max-w-sm 2xl:max-w-lg">
-                <span class={`text-4xl font-bold text-primary ${service.img}`}></span>
+                <span class={`text-8xl md:text-4xl font-bold text-primary ${service.img}`}></span>
               </div>
             </div>
             <div class="flex flex-col justify-center p-4 text-center md:w-1/2 md:items-start md:text-start">
@@ -121,15 +121,24 @@ const services: Array<ServiceItem> = [
 </ContentSection>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Highway+Gothic&display=swap');
+
+  /* Improved emoji font stack */
+  @font-face {
+    font-family: 'EmojiFallback';
+    src: local('Apple Color Emoji'),
+         local('Segoe UI Emoji'),
+         local('Segoe UI Symbol'),
+         local('Noto Color Emoji');
+    unicode-range: U+1F000-1F644, U+203C-3299;
+  }
 
   .turnpike-button {
     font-family: 'Highway Gothic', Arial, sans-serif;
-    background-color: #005f25; /* NJ Turnpike green */
-    color: #ffd700; /* Gold text */
+    background-color: #005f25;
+    color: #ffd700;
     border: 4px solid #ffd700;
-    border-radius: 0; /* Square edges */
+    border-radius: 0;
     position: relative;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -161,6 +170,21 @@ const services: Array<ServiceItem> = [
     font-weight: bold;
   }
 
+  /* Emoji styling with fallback */
+  [class^="emoji-"] {
+    font-family: 'EmojiFallback', 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  /* Responsive emoji sizing */
+  @media (min-width: 768px) {
+    [class^="emoji-"] {
+      font-size: 3rem;
+    }
+  }
+
   /* Dark theme adjustments */
   body.dark-theme .turnpike-button {
     background-color: #004a1c;
@@ -176,10 +200,5 @@ const services: Array<ServiceItem> = [
   body.dark-theme .turnpike-button::before {
     background-color: #004a1c;
     border-color: #ffdf33;
-  }
-
-  /* Emoji styling */
-  [class^="emoji-"] {
-    font-family: 'Noto Color Emoji', sans-serif;
   }
 </style>
