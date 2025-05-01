@@ -11,53 +11,53 @@ const services: Array<ServiceItem> = [
     link: "https://fun.luvnft.com/courses/bitcoin-ordinals-for-beginners-%f0%9f%aa%99%f0%9f%92%96/"
   },
   {
-    title: "LIVE",
-    subtitle: "Events",
-    description: "Contact us to schedule a live event for your JERSEY.FM release.",
-    img: "emoji-Live",
-    link: "/live"
-  },
-  {
     title: "TV",
-    subtitle: "Raw & Uncut",
-    description: "TV is the TikTok-like Jersey Club platform for audio video reels.",
+    subtitle: "Exit 2",
+    description: "The MTV of Jersey Club videos fans can buy and sell.",
     img: "emoji-TV",
-    link: "/tv"
+    link: "http://tv.jersey.fm"
   },
   {
-    title: "ADS",
-    subtitle: "Paid",
-    description: "We run and manage paid ad campaigns on Google, TikTok, IG & Facebook for artists.",
+    title: "Jersey Club",
+    subtitle: "Exit 3",
+    description: "Join the Metaverse Jersey Club to mix and mingle.",
+    img: "emoji-Live",
+    link: "https://www.spatial.io/s/jerseyclubs-Digital-Hangout-6812bd5f5e2a67a19304853d"
+  },
+  {
+    title: "TikTok",
+    subtitle: "Exit 4",
+    description: "Follow us on TikTok.",
     img: "emoji-PPV",
-    link: "/ads"
+    link: "https://tiktok.com/@jerseyclubtv"
   },
   {
     title: "PODCAST",
-    subtitle: "Jersey Club Podcast",
-    description: "Search on TikTok for our Jersey Club Podcast AR Effect filter and leave a reel-review to be featured on TV.",
+    subtitle: "Exit 5",
+    description: "Jersey Club TikTok Podcast launching soon",
     img: "emoji-Mic",
     link: "/podcast"
   },
   {
-    title: "MEMECOINS",
-    subtitle: "Social",
-    description: "We transform Jersey Club music releases into viral memecoin campaigns—measuring artist buzz and fan engagement through blockchain-powered metrics.",
+    title: "PUMP",
+    subtitle: "Exit 6",
+    description: "Pump your fav Jersey Club musik, chat and chill in the LUV NFT FUN club.",
     img: "emoji-Ads",
-    link: "/memecoins"
+    link: "https://fun.luvnft.com/groups/jersey-club-fm/"
   },
   {
-    title: "COVER ART",
-    subtitle: "Branded",
-    description: "Get branded cover art for your Jersey Club music that fans can buy as digital merch.",
+    title: "SELL RECORDS",
+    subtitle: "Exit 7",
+    description: "Go see the Wizard of Hahz on Telegram to have your Jersey Club Record art created that can be sold for crypto with no middleman fees.",
     img: "emoji-Camera",
-    link: "/cover-art"
+    link: "https://t.me/hahznft"
   },
   {
-    title: "CHALLENGE",
-    subtitle: "Win Bitcoin",
-    description: "Join our social challenges to win Bitcoin or crypto.",
+    title: "$JERSEY",
+    subtitle: "Exit 8",
+    description: "Buy Solana $JERSEY memecoins to tip Jersey Musik creators and dancers during our upcoming livestream shows.",
     img: "emoji-Tip",
-    link: "/challenge"
+    link: "https://pump.fun/coin/FM5eNvujxrqYEnzsfSDTT1NGDXkP49sAQbCNQ6XNpump"
   },
 ];
 ---
@@ -82,7 +82,7 @@ const services: Array<ServiceItem> = [
               <p class="text-base font-normal text-gray-500 text-balance">
                 {service.description}
               </p>
-              <a href={service.link} class="mt-4 inline-block rounded-lg bg-primary px-6 py-3 text-white hover:bg-primary-dark transition-colors learn-more-link">
+              <a href={service.link} class="mt-4 inline-block px-8 py-4 text-2xl font-bold uppercase turnpike-button">
                 Learn More
               </a>
             </div>
@@ -109,7 +109,7 @@ const services: Array<ServiceItem> = [
               <p class="text-base font-normal text-gray-500">
                 {service.description}
               </p>
-              <a href={service.link} class="mt-4 inline-block rounded-lg bg-primary px-6 py-3 text-white hover:bg-primary-dark transition-colors learn-more-link">
+              <a href={service.link} class="mt-4 inline-block px-8 py-4 text-2xl font-bold uppercase turnpike-button">
                 Learn More
               </a>
             </div>
@@ -122,25 +122,64 @@ const services: Array<ServiceItem> = [
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Highway+Gothic&display=swap');
 
-  .learn-more-link {
-    /* Default styles for visibility on white theme */
-    color: white; /* Ensure text is visible on a white background */
-    background-color: var(--primary-color); /* Use your primary color */
+  .turnpike-button {
+    font-family: 'Highway Gothic', Arial, sans-serif;
+    background-color: #005f25; /* NJ Turnpike green */
+    color: #ffd700; /* Gold text */
+    border: 4px solid #ffd700;
+    border-radius: 0; /* Square edges */
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 1.5rem;
   }
 
-  /* Styles for black theme (you might need to adjust based on your actual theme implementation) */
-  body.dark-theme .learn-more-link {
-    color: var(--text-on-dark); /* Text color for dark theme, e.g., white or a light color */
-    background-color: var(--primary-color-dark); /* A darker shade of your primary color or a contrasting color */
+  .turnpike-button:hover {
+    background-color: #004a1c;
+    color: #ffea66;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
 
-  /* Define your theme variables (if not already defined elsewhere) */
-  :root {
-    --primary-color: #007bff; /* Example primary color */
-    --primary-color-dark: #0056b3; /* Example dark primary color */
-    --text-on-dark: white; /* Example text color on dark background */
+  .turnpike-button::before {
+    content: "EXIT";
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #005f25;
+    color: white;
+    padding: 0.25rem 1rem;
+    font-size: 1rem;
+    border: 3px solid #ffd700;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    font-weight: bold;
   }
 
-  /* You might have other theme-related styles in your global stylesheet */
+  /* Dark theme adjustments */
+  body.dark-theme .turnpike-button {
+    background-color: #004a1c;
+    color: #ffdf33;
+    border-color: #ffdf33;
+  }
+
+  body.dark-theme .turnpike-button:hover {
+    background-color: #003814;
+    color: #ffea66;
+  }
+
+  body.dark-theme .turnpike-button::before {
+    background-color: #004a1c;
+    border-color: #ffdf33;
+  }
+
+  /* Emoji styling */
+  [class^="emoji-"] {
+    font-family: 'Noto Color Emoji', sans-serif;
+  }
 </style>
