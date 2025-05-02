@@ -141,7 +141,7 @@ a,
 .emoji-Party::before,
 .emoji-Mic::before {
   font-family: "Noto Color Emoji", sans-serif;
-  font-size: 333px;
+  font-size: 333px; /* Set emoji size to 400px */
   display: flex;
   justify-content: center;
   align-items: center;
