@@ -1,120 +1,14 @@
-// page.astro or a component file
-import ContentSection from "~/components/content-section.astro";
-import type { ServiceItem } from "~/types";
-
-const services: Array<ServiceItem> = [
-  {
-    title: "MU$IK",
-    subtitle: "Exit 1",
-    description: "Take a LUV NFT FUN course to learn how to sell Bitcoin MU$IK as an artist or fan!",
-    emoji: "🎵", // Direct emoji character
-    link: "https://fun.luvnft.com/courses/bitcoin-ordinals-for-beginners-%f0%9f%aa%99%f0%9f%92%96/"
-  },
-  {
-    title: "TV",
-    subtitle: "Exit 2",
-    description: "The MTV of Jersey Club videos fans can buy and sell.",
-    emoji: "📺",
-    link: "http://tv.jersey.fm"
-  },
-  {
-    title: "Jersey Club",
-    subtitle: "Exit 3",
-    description: "Join the Metaverse Jersey Club to mix and mingle.",
-    emoji: "🏝️",
-    link: "https://www.spatial.io/s/jerseyclubs-Digital-Hangout-6812bd5f5e2a67a19304853d"
-  },
-  {
-    title: "TikTok",
-    subtitle: "Exit 4",
-    description: "Follow us on TikTok.",
-    emoji: "🎥",
-    link: "https://tiktok.com/@jerseyclubtv"
-  },
-  {
-    title: "PODCAST",
-    subtitle: "Exit 5",
-    description: "Jersey Club TikTok Podcast launching soon",
-    emoji: "🎙️",
-    link: "/podcast"
-  },
-  {
-    title: "LUV NFT FUN",
-    subtitle: "Exit 6",
-    description: "Join the LUV NFT FUN Jersey Club and network with Jersey Club heads from around the world.",
-    emoji: "💎",
-    link: "https://fun.luvnft.com/groups/jersey-club-fm/"
-  },
-  {
-    title: "VINYL",
-    subtitle: "Exit 7",
-    description: "Connect your Spotify with our Vinyl Record Player.",
-    emoji: "🎵",
-    link: "https://vinyl.jersey.fm"
-  },
-  {
-    title: "$JERSEY",
-    subtitle: "Exit 8",
-    description: "Buy Solana $JERSEY memecoins to tip creators and dancers in our TikTok lives and Jersey Club livestreams.",
-    emoji: "💸",
-    link: "https://pump.fun/coin/FM5eNvujxrqYEnzsfSDTT1NGDXkP49sAQbCNQ6XNpump"
-  },
-];
+---
+// Your imports and service data here
 ---
 
 <ContentSection title="Route 9" id="solutions">
-  <Fragment slot="lead">
-    Take a trip down the Route 9 of Jersey Club exits.
-  </Fragment>
-
-  <div class="space-y-16">
-    {services.map((service, index) => (
-      <div class="max-w-6xl mx-auto" key={index}>
-        <div class={`md:flex ${index % 2 === 0 ? 'md:flex-row' : 'flex-col-reverse md:flex-row'} lg:min-h-[27rem] 2xl:min-h-[35rem]`}>
-          <div class="my-6 flex justify-center md:my-12 md:w-1/2">
-            <div class="m-auto">
-              <span class="text-[5rem] sm:text-[7rem] md:text-[12rem] 2xl:text-[16rem] leading-none font-bold text-primary block">
-                {service.emoji}
-              </span>
-            </div>
-          </div>
-          <div class="flex flex-col justify-center p-4 text-center md:w-1/2 md:text-start md:items-start">
-            <h3 class="mb-2 text-lg font-semibold text-gray-500 md:text-base">
-              {service.subtitle}
-            </h3>
-            <h2 class="gradient-text mb-6 text-4xl font-extrabold md:mb-7 md:text-6xl">
-              {service.title}
-            </h2>
-            <p class="text-base font-normal text-gris text-balance">
-              {service.description}
-            </p>
-            <a href={service.link} class="mt-4 inline-block px-6 py-3 text-lg font-bold uppercase turnpike-button">
-              EXIT
-            </a>
-          </div>
-          <div class="flex-1 flex justify-center my-6 md:my-12">
-            <div class="text-[8rem] md:text-[12rem] 2xl:text-[16rem] leading-none text-primary">
-              {service.emoji}
-            </div>
-          </div>
-        </div>
-      </div>
-    ))}
-  </div>
+  <!-- Your content here -->
 </ContentSection>
 
-<script type="module" is:inline>
-  import twemoji from "https://cdn.jsdelivr.net/npm/twemoji@14.0.2/+esm";
-  window.addEventListener("DOMContentLoaded", () => {
-    twemoji.parse(document.body, {
-      folder: "svg",
-      ext: ".svg"
-    });
-  });
-</script>
-
-<style>
+<style is:global>
   @import url('https://fonts.googleapis.com/css2?family=Highway+Gothic&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 
   .turnpike-button {
     font-family: 'Highway Gothic', Arial, sans-serif;
@@ -122,10 +16,12 @@ const services: Array<ServiceItem> = [
     color: #ffd700;
     border: 4px solid #ffd700;
     border-radius: 0;
+    position: relative;
     text-decoration: none;
     transition: all 0.3s ease;
     letter-spacing: 1.5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 1.5rem;
   }
 
   .turnpike-button:hover {
@@ -151,28 +47,38 @@ const services: Array<ServiceItem> = [
     font-weight: bold;
   }
 
-  body.dark-theme .turnpike-button {
+  .dark .turnpike-button {
     background-color: #004a1c;
     color: #ffdf33;
     border-color: #ffdf33;
   }
 
-  body.dark-theme .turnpike-button:hover {
+  .dark .turnpike-button:hover {
     background-color: #003814;
     color: #ffea66;
   }
 
-  body.dark-theme .turnpike-button::before {
+  .dark .turnpike-button::before {
     background-color: #004a1c;
     border-color: #ffdf33;
   }
+
+  /* Emoji styling */
+  .emoji-display {
+    font-family: 'Noto Color Emoji', sans-serif;
+    font-size: 8rem;
+    line-height: 1;
+  }
+
+  @media (min-width: 768px) {
+    .emoji-display {
+      font-size: 12rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .emoji-display {
+      font-size: 16rem;
+    }
+  }
 </style>
-
-**Key Changes:**
-
-1.  **Removed `emoji-*` CSS Rules:** The entire block of CSS defining `.emoji-TV::before`, `.emoji-Tree::before`, etc., has been removed. This was the source of the fixed large emoji size.
-2.  **Updated HTML:** The `<span>` tag displaying the emoji now has the class `twemoji` instead of `emoji-${service.emoji}`. Twemoji will target elements with this class to replace the text emoji with an SVG.
-3.  **Simplified CSS:** The remaining CSS focuses on styling the container of the Twemoji SVG (`.twemoji`) and the Twemoji SVG image itself (`.twemoji img`) to control its size and responsiveness.
-4.  **Adjusted `max-height`:** The `max-height` for `.twemoji img` is set to `160px` initially, and then adjusted for smaller screens in the media query. You can adjust these values to your desired size.
-
-By making these changes, you'll be relying on the Twemoji script to handle the rendering and sizing of your emojis, ensuring they scale properly and don't appear excessively large.
