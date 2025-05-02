@@ -7,7 +7,7 @@ const services: Array<ServiceItem> = [
     title: "MU$IK",
     subtitle: "Exit 1",
     description: "Take a LUV NFT FUN course to learn how to sell Bitcoin MU$IK as an artist or fan!",
-    emoji: "🎶",
+    emoji: "🎵", // Direct emoji character
     link: "https://fun.luvnft.com/courses/bitcoin-ordinals-for-beginners-%f0%9f%aa%99%f0%9f%92%96/"
   },
   {
@@ -21,7 +21,7 @@ const services: Array<ServiceItem> = [
     title: "Jersey Club",
     subtitle: "Exit 3",
     description: "Join the Metaverse Jersey Club to mix and mingle.",
-    emoji: "🎉",
+    emoji: "🏝️",
     link: "https://www.spatial.io/s/jerseyclubs-Digital-Hangout-6812bd5f5e2a67a19304853d"
   },
   {
@@ -39,10 +39,10 @@ const services: Array<ServiceItem> = [
     link: "/podcast"
   },
   {
-    title: "JERSEY CLUB",
+    title: "LUV NFT FUN",
     subtitle: "Exit 6",
-    description: "Pump your fav Jersey Club musik, chat and chill in the LUV NFT FUN club.",
-    emoji: "📣",
+    description: "Join the LUV NFT FUN Jersey Club and network with Jersey Club heads from around the world.",
+    emoji: "💎",
     link: "https://fun.luvnft.com/groups/jersey-club-fm/"
   },
   {
@@ -70,27 +70,25 @@ const services: Array<ServiceItem> = [
   <div class="space-y-16">
     {services.map((service, index) => (
       <div class="max-w-6xl mx-auto" key={index}>
-        <div class={`md:flex ${index % 2 === 0 ? 'md:flex-row' : 'flex-col-reverse md:flex-row'} lg:min-h-[27rem] 2xl:min-h-[35rem]`}>
-          <div class="my-6 flex justify-center md:my-12 md:w-1/2">
-            <div class="m-auto">
-              <span class="text-[5rem] sm:text-[7rem] md:text-[12rem] 2xl:text-[16rem] leading-none font-bold text-primary block">
-                {service.emoji}
-              </span>
-            </div>
-          </div>
-          <div class="flex flex-col justify-center p-4 text-center md:w-1/2 md:text-start md:items-start">
-            <h3 class="mb-2 text-lg font-semibold text-gray-500 md:text-base">
+        <div class={`md:flex ${index % 2 === 0 ? 'md:flex-row' : 'flex-col-reverse md:flex-row'} items-center lg:min-h-[27rem] 2xl:min-h-[35rem] gap-8`}>
+          <div class="flex-1 p-4 text-center md:text-start">
+            <h3 class="mb-2 text-lg font-semibold text-gris md:text-base">
               {service.subtitle}
             </h3>
             <h2 class="gradient-text mb-6 text-4xl font-extrabold md:mb-7 md:text-6xl">
               {service.title}
             </h2>
-            <p class="text-base font-normal text-gray-500 text-balance">
+            <p class="text-base font-normal text-gris text-balance">
               {service.description}
             </p>
             <a href={service.link} class="mt-4 inline-block px-8 py-4 text-2xl font-bold uppercase turnpike-button">
               Learn More
             </a>
+          </div>
+          <div class="flex-1 flex justify-center my-6 md:my-12">
+            <div class="text-[8rem] md:text-[12rem] 2xl:text-[16rem] leading-none text-primary">
+              {service.emoji}
+            </div>
           </div>
         </div>
       </div>
@@ -98,7 +96,7 @@ const services: Array<ServiceItem> = [
   </div>
 </ContentSection>
 
-<style>
+<style is:global>
   @import url('https://fonts.googleapis.com/css2?family=Highway+Gothic&display=swap');
 
   .turnpike-button {
@@ -138,18 +136,18 @@ const services: Array<ServiceItem> = [
     font-weight: bold;
   }
 
-  body.dark-theme .turnpike-button {
+  .dark .turnpike-button {
     background-color: #004a1c;
     color: #ffdf33;
     border-color: #ffdf33;
   }
 
-  body.dark-theme .turnpike-button:hover {
+  .dark .turnpike-button:hover {
     background-color: #003814;
     color: #ffea66;
   }
 
-  body.dark-theme .turnpike-button::before {
+  .dark .turnpike-button::before {
     background-color: #004a1c;
     border-color: #ffdf33;
   }

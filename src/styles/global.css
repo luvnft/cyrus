@@ -137,17 +137,18 @@ a,
 .emoji-Star::before,
 .emoji-Z::before,
 .emoji-Live::before,
-.emoji-Camera::before,
-.emoji-Mic::before {  /* Added new emoji classes */
+.emoji-Music::before,
+.emoji-Party::before,
+.emoji-Mic::before {
   font-family: "Noto Color Emoji", sans-serif;
-  font-size: 333px; /* Set emoji size to 400px */
+  font-size: 333px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100%; /* Ensure the container takes full width */
-  height: 400px; /* Set height to match the emoji size */
-  line-height: 400px; /* Center the emoji vertically */
+  width: 100%;
+  height: 400px;
+  line-height: 400px;
 }
 
 /* Individual emojis */
@@ -199,11 +200,14 @@ a,
   content: "👁️";
 }
 
-/* New emoji definitions */
-.emoji-Camera::before {
-  content: "📷"; /* Camera emoji */
+.emoji-Music::before {
+  content: "🎵";
+}
+
+.emoji-Party::before {
+  content: "🎉";
 }
 
 .emoji-Mic::before {
-  content: "🎙️"; /* Microphone emoji */
+  content: "🎙️";
 }
