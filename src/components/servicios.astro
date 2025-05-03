@@ -123,14 +123,15 @@ const services: Array<ServiceItem> = [
               )}
             </div>
             <div class="my-8 flex justify-center md:my-0 md:w-1/2">
-              <div class="w-full max-w-md aspect-[9/16]">
+              <div class="w-full max-w-md">
                 <img
                   src={service.img}
                   alt={service.title}
                   class="w-full h-full object-cover rounded-xl shadow-2xl"
                   loading="lazy"
-                  width="360"
-                  height="640"
+                  width="600"
+                  height="800"
+                  style="max-width: 100%; height: auto;"
                 />
               </div>
             </div>
@@ -138,14 +139,15 @@ const services: Array<ServiceItem> = [
         ) : (
           <div class="flex flex-col-reverse md:flex-row lg:min-h-[30rem] gap-8 items-center">
             <div class="my-8 flex justify-center md:my-0 md:w-1/2">
-              <div class="w-full max-w-md aspect-[9/16]">
+              <div class="w-full max-w-md">
                 <img
                   src={service.img}
                   alt={service.title}
                   class="w-full h-full object-cover rounded-xl shadow-2xl"
                   loading="lazy"
-                  width="360"
-                  height="640"
+                  width="600"
+                  height="800"
+                  style="max-width: 100%; height: auto;"
                 />
               </div>
             </div>
@@ -186,3 +188,4 @@ const services: Array<ServiceItem> = [
     line-height: 1.2;
   }
 </style>
+
